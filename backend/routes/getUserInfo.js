@@ -1,14 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+// req>body>params> uid, password
 router.get('/', function(req, res, next) {
-  //res.render('index', { title: 'Express' });
+    
+    console.log(req.query)
+    console.log('hi getuser')
 
     var metadata={
-        test:'hi'
+        uid:req.query.uid,
+        length:1
     }
-    console.log(metadata)
+    //console.log(metadata)
     res.json(metadata)
 });
 
